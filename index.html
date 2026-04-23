@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT2: Icon Design Hexxy ⚡️</title>
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            gap: 50px;
+            width: fit-content;
+            margin: 73px auto;
+        }
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .icon img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .icon .hover-img {
+            display: none;
+        }
+
+        .icon:hover .default-img {
+            display: none;
+        }
+
+        .icon:hover .hover-img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+   <div class="icon-grid">
+
+    <div class="icon" onmouseenter="playSound('resource')">
+        <img class="default-img" src="resource-before.png">
+        <img class="hover-img" src="resource-hover.png">
+    </div>
+
+    <div class="icon" onmouseenter="playSound('mission')">
+        <img class="default-img" src="mission-before.png">
+        <img class="hover-img" src="mission-hover.png">
+    </div>
+
+    <div class="icon" onmouseenter="playSound('save')">
+        <img class="default-img" src="save-before.png">
+        <img class="hover-img" src="save-hover.png">
+    </div>
+
+    <div class="icon" onmouseenter="playSound('energytower')">
+        <img class="default-img" src="energytower-before.png">
+        <img class="hover-img" src="energytower-hover.png">
+    </div>
+
+    <div class="icon" onmouseenter="playSound('skilltree')">
+        <img class="default-img" src="skilltree-before.png">
+        <img class="hover-img" src="skilltree-hover.png">
+    </div>
+
+    <div class="icon" onmouseenter="playSound('sector')">
+        <img class="default-img" src="sector-before.png">
+        <img class="hover-img" src="sector-hover.png">
+    </div>
+
+    <div class="icon" onmouseenter="playSound('map')">
+        <img class="default-img" src="map-before.png">
+        <img class="hover-img" src="map-hover.png">
+    </div>
+
+    <div class="icon" onmouseenter="playSound('library')">
+        <img class="default-img" src="library-before.png">
+        <img class="hover-img" src="library-hover.png">
+    </div>
+
+    <div class="icon" onmouseenter="playSound('setting')">
+        <img class="default-img" src="setting-before.png">
+        <img class="hover-img" src="setting-hover.png">
+    </div>
+
+</div>
+
+    <script>
+    var sounds = {
+        resource: new Audio('resource.wav'),
+        mission: new Audio('mission.wav'),
+        save: new Audio('save.wav'),
+        energytower: new Audio('energytower.wav'),
+        skilltree: new Audio('skilltree.wav'),
+        sector: new Audio('sector.wav'),
+        map: new Audio('map.wav'),
+        library: new Audio('library.wav'),
+        setting: new Audio('setting.mp3')
+    };
+
+    function playSound(name) {
+        sounds[name].currentTime = 0;
+        sounds[name].play();
+    }
+</script>
+
+</body>
+
+</html>

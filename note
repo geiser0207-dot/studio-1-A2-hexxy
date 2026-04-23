@@ -1,0 +1,68 @@
+HTML
+
+`<!DOCTYPE html>` — 告诉浏览器这是HTML5文件
+
+`<html lang="en">` — 整个页面的根标签，语言设英文
+
+`<head>` — 存放设置，用户看不到
+
+`<meta charset="UTF-8">` — 支持所有字符，防乱码
+
+`<meta name="viewport"...>` — 手机适配
+
+`<title>` — 浏览器标签页上的文字
+
+
+CSS
+
+`background-color: #000000` — 页面背景黑色
+
+`margin: 0` — 去掉浏览器默认边距
+
+`padding: 40px` — 页面四周留40px空白
+
+`box-sizing: border-box` — padding不会撑大容器
+
+`display: grid` — 开启网格布局
+
+`grid-template-columns: repeat(3, 200px)` — 每排3列，每列200px宽
+
+`gap: 50px` — 图标之间间距50px
+
+`width: fit-content` — 容器宽度刚好包住内容
+
+`margin: 73px auto` — 上下73px，左右自动居中
+
+`display: flex / flex-direction: column / align-items: center` — 每个icon里的内容垂直居中排列
+
+`cursor: pointer` — 鼠标移上去变成手型
+
+`object-fit: contain` — 图片保持比例不变形
+
+`.hover-img { display: none }` — hover图默认藏起来
+
+`.icon:hover .default-img { display: none }` — 鼠标进来，默认图消失
+
+`.icon:hover .hover-img { display: block }` — 鼠标进来，hover图出现
+
+
+HTML body
+
+`<div class="icon-grid">` — 9个图标的容器
+
+`<div class="icon" onmouseenter="playSound('resource')">` — 单个图标，鼠标进入时触发播放
+
+`<img class="default-img" src="...">` — 默认状态图片
+
+`<img class="hover-img" src="...">` — hover状态图片
+
+
+JavaScript
+
+`var sounds = {...}` — 页面加载时把9个音频全部预载好
+
+`new Audio('resource.wav')` — 创建一个音频对象
+
+`sounds[name].currentTime = 0` — 每次从头播放，不会因为连续hover而卡住
+
+`sounds[name].play()` — 播放音频
