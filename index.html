@@ -49,8 +49,7 @@
 </head>
 
 <body>
-    <p style="color:rgb(61, 61, 61); text-align: center">Hi there!
-         Click to get sound effect~ </p>
+    <p style="color:rgb(61, 61, 61); text-align: center">Hi there! Click to get sound effect~ </p>
 
     <div class="icon-grid">
 
@@ -102,21 +101,10 @@
     </div>
 
     <script>
-    var sounds = {
-        resource: new Audio('resource.wav'),
-        mission: new Audio('mission.wav'),
-        save: new Audio('save.wav'),
-        energytower: new Audio('energytower.wav'),
-        skilltree: new Audio('skilltree.wav'),
-        sector: new Audio('sector.wav'),
-        map: new Audio('map.wav'),
-        library: new Audio('library.wav'),
-        setting: new Audio('setting.mp3')
-    };
 
-    function playSound(name) {
-        sounds[name].currentTime = 0;
-        sounds[name].play();
+
+    function playSound(file) {
+        var audio = new Audio(file); audio.play()
     }
 </script>
 
